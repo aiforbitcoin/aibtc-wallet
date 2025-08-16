@@ -56,7 +56,7 @@ export class SendComponent implements OnInit {
   addressAliasMatch = '';
 
   amounts = [
-    { name: 'XNO', shortName: 'XNO', value: 'mnano' },
+    { name: 'FBTC', shortName: 'FBTC', value: 'mnano' },
     { name: 'knano', shortName: 'knano', value: 'knano' },
     { name: 'nano', shortName: 'nano', value: 'nano' },
   ];
@@ -225,7 +225,7 @@ export class SendComponent implements OnInit {
 
     const destinationAddress = this.toAccountID || '';
 
-    const nanoURIScheme = /^nano:.+$/g;
+    const nanoURIScheme = /^aibtc:.+$/g;
     const isNanoURI = nanoURIScheme.test(destinationAddress);
 
     if (isNanoURI === true) {
@@ -488,7 +488,7 @@ export class SendComponent implements OnInit {
     );
 
     if (!this.addressBookMatch && this.toAccountID === environment.donationAddress) {
-      this.addressBookMatch = 'Nault Donations';
+      this.addressBookMatch = 'FBTC Main';
     }
 
     // const accountInfo = await this.walletService.walletApi.accountInfo(this.toAccountID);
@@ -559,7 +559,7 @@ export class SendComponent implements OnInit {
       return this.notificationService.sendWarning(`From and to account are required`);
     }
     if (!this.validateAmount()) {
-      return this.notificationService.sendWarning(`Invalid XNO amount`);
+      return this.notificationService.sendWarning(`Invalid FBTC amount`);
     }
 
     this.preparingTransaction = true;
@@ -588,7 +588,7 @@ export class SendComponent implements OnInit {
       return this.notificationService.sendWarning(`Amount is invalid`);
     }
     if (from.balanceBN.minus(rawAmount).lessThan(0)) {
-      return this.notificationService.sendError(`From account does not have enough XNO`);
+      return this.notificationService.sendError(`From account does not have enough FBTC`);
     }
 
     // Determine a proper raw amount to show in the UI, if a decimal was entered

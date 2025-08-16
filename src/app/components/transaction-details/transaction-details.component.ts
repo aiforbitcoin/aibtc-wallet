@@ -15,7 +15,6 @@ import { TranslocoService } from '@ngneat/transloco';
 })
 export class TransactionDetailsComponent implements OnInit {
   nano = 1000000000000000000000000;
-
   routerSub = null;
   transaction: any = {};
   hashID = '';

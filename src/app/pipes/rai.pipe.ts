@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'rai'
 })
 export class RaiPipe implements PipeTransform {
-  precision = 6;
+  precision = 2;
 
   mrai = 1000000000000000000000000000000;
   krai = 1000000000000000000000000000;
@@ -17,15 +17,15 @@ export class RaiPipe implements PipeTransform {
 
     switch (denomination.toLowerCase()) {
       default:
-      case 'xrb': return `${(value / this.mrai).toFixed(6)}${!hideText ? ' XNO' : ''}`;
+      case 'aibtc': return `${(value / this.mrai).toFixed(6)}${!hideText ? ' FBTC' : ''}`;
       case 'mnano':
         const hasRawValue = (value / this.rai) % 1;
         if (hasRawValue) {
           // New more precise toFixed function, but bugs on huge raw numbers
           const newVal = value / this.mrai < 0.000001 ? 0 : value / this.mrai;
-          return `${this.toFixed(newVal, this.precision)}${!hideText ? ' XNO' : ''}`;
+          return `${this.toFixed(newVal, this.precision)}${!hideText ? ' FBTC' : ''}`;
         } else {
-          return `${(value / this.mrai).toFixed(6)}${!hideText ? ' XNO' : ''}`;
+          return `${(value / this.mrai).toFixed(6)}${!hideText ? ' FBTC' : ''}`;
         }
       case 'knano': return `${(value / this.krai).toFixed(3)}${!hideText ? ' knano' : ''}`;
       case 'nano': return `${(value / this.rai).toFixed(0)}${!hideText ? ' nano' : ''}`;
@@ -50,8 +50,9 @@ export class RaiPipe implements PipeTransform {
     if (isNaN(num)) {
       return 0;
     }
-    const re = new RegExp('^-?\\d+(?:\.\\d{0,' + (fixed || -1) + '})?');
-    return num.toString().match(re)[0];
+    return num.toFixed(2); // Round the number to two decimal places
+    //const re = new RegExp('^-?\\d+(?:\.\\d{0,' + (fixed || -1) + '})?');
+    //return num.toString().match(re)[0];
   }
 
 }

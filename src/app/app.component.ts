@@ -113,13 +113,13 @@ export class AppComponent implements OnInit {
 
     // update selected account object with the latest balance, pending, etc
     if (this.wallet.selectedAccountId) {
-      const currentUpdatedAccount = this.wallet.accounts.find(a => a.id === this.wallet.selectedAccountId) ?? null;
+      const currentUpdatedAccount = this.wallet.accounts.find(a => a.id === this.wallet.selectedAccountId);
       this.wallet.selectedAccount = currentUpdatedAccount;
     }
 
     await this.walletService.reloadBalances();
 
-    // Workaround fix for github pages when Nault is refreshed (or externally linked) and there is a subpath for example to the send screen.
+    // Workaround fix for github pages when AI-Bitcoin-Wallet is refreshed (or externally linked) and there is a subpath for example to the send screen.
     // This data is saved from the 404.html page
     const path = localStorage.getItem('path');
 
@@ -184,7 +184,7 @@ export class AppComponent implements OnInit {
     // Notify user after service worker was updated
     this.updates.activated.subscribe((event) => {
       console.log(`SW update successful. Current: ${event.current.hash}`);
-      this.notifications.sendSuccess('Nault was updated successfully.');
+      this.notifications.sendSuccess('AI-Bitcoin-Wallet was updated successfully.');
     });
 
     // Check how long the wallet has been inactive, and lock it if it's been too long
@@ -204,7 +204,8 @@ export class AppComponent implements OnInit {
       if (!this.settings.settings.serverAPI) return;
       await this.updateFiatPrices();
     } catch (err) {
-      this.notifications.sendWarning(`There was an issue retrieving latest nano price.  Ensure your AdBlocker is disabled on this page then reload to see accurate FIAT values.`, { length: 0, identifier: `price-adblock` });
+      //this.notifications.sendWarning(`There was an issue retrieving latest AI-Bitcoin price.  Ensure your AdBlocker is disabled on this page then reload to see accurate FIAT values.`, { length: 0, identifier: `price-adblock` });
+      this.notifications.sendWarning(`There is no price for AI-Bitcoin yet.`, { length: 0, identifier: `price-adblock` });
     }
   }
 
@@ -222,14 +223,14 @@ export class AppComponent implements OnInit {
   }
 
   /*
-    This is important as it looks through saved data using hardcoded xrb_ prefixes
+    This is important as it looks through saved data using hardcoded aibtc_ prefixes
     (Your wallet, address book, rep list, etc) and updates them to nano_ prefix for v19 RPC
    */
   async patchXrbToNanoPrefixData() {
     // If wallet is version 2, data has already been patched.  Otherwise, patch all data
     if (this.settings.settings.walletVersion >= 2) return;
 
-    await this.walletService.patchOldSavedData(); // Change saved xrb_ addresses to nano_
+    await this.walletService.patchOldSavedData(); // Change saved aibtc_ addresses to nano_
     this.addressBook.patchXrbPrefixData();
     this.representative.patchXrbPrefixData();
 
@@ -305,7 +306,7 @@ export class AppComponent implements OnInit {
     if (!searchData.length) return;
 
     const isValidNanoAccount = (
-        ( searchData.startsWith('xrb_') || searchData.startsWith('nano_') )
+        ( searchData.startsWith('aibtc_') || searchData.startsWith('xrb_') || searchData.startsWith('nano_') )
       && this.util.account.isValidAccount(searchData)
     );
 
@@ -324,7 +325,7 @@ export class AppComponent implements OnInit {
       return;
     }
 
-    this.notifications.sendWarning(`Invalid nano address or block hash! Please double check your input`);
+    this.notifications.sendWarning(`Invalid AI-Bitcoin address or block hash! Please double check your input`);
   }
 
   updateIdleTime() {
@@ -337,7 +338,7 @@ export class AppComponent implements OnInit {
       return;
     }
     this.walletService.reloadBalances();
-    this.notifications.sendInfo(`Attempting to reconnect to nano node`);
+    this.notifications.sendInfo(`Attempting to reconnect to AI-Bitcoin node`);
   }
 
   async updateFiatPrices() {

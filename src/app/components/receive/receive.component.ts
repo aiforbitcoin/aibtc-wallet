@@ -298,7 +298,7 @@ export class ReceiveComponent implements OnInit, OnDestroy {
     if (account.length > 1) {
       this.qrAccount = account;
       this.qrCodeImage = null;
-      this.qrCodeUri = `nano:${account}${this.qrAmount ? `?amount=${this.qrAmount.toString(10)}` : ''}`;
+      this.qrCodeUri = `aibtc:${account}${this.qrAmount ? `?amount=${this.qrAmount.toString(10)}` : ''}`;
       qrCode = await QRCode.toDataURL(this.qrCodeUri, {scale: 7});
     }
     this.qrCodeImage = qrCode;
@@ -314,7 +314,7 @@ export class ReceiveComponent implements OnInit, OnDestroy {
     }
     if (this.qrAccount.length > 1) {
       this.qrCodeImage = null;
-      this.qrCodeUri = `nano:${this.qrAccount}${this.qrAmount ? `?amount=${this.qrAmount.toString(10)}` : ''}`;
+      this.qrCodeUri = `aibtc:${this.qrAccount}${this.qrAmount ? `?amount=${this.qrAmount.toString(10)}` : ''}`;
       qrCode = await QRCode.toDataURL(this.qrCodeUri, {scale: 7});
       this.qrCodeImage = qrCode;
     }
@@ -357,30 +357,20 @@ export class ReceiveComponent implements OnInit, OnDestroy {
     }
     receivableBlock.loading = true;
 
-    let createdReceiveBlockHash = null;
-    let hasShownErrorNotification = false;
+    const createdReceiveBlockHash =
+      await this.nanoBlock.generateReceive(walletAccount, sourceBlock, this.walletService.isLedgerWallet());
 
-    try {
-      createdReceiveBlockHash =
-        await this.nanoBlock.generateReceive(walletAccount, sourceBlock, this.walletService.isLedgerWallet());
-    } catch (err) {
-      this.notificationService.sendError('Error receiving transaction: ' + err.message);
-      hasShownErrorNotification = true;
-    }
-
-    if (createdReceiveBlockHash != null) {
+    if (createdReceiveBlockHash) {
       receivableBlock.received = true;
       this.mobileTransactionMenuModal.hide();
       this.notificationService.removeNotification('success-receive');
-      this.notificationService.sendSuccess(`Successfully received nano!`, { identifier: 'success-receive' });
+      this.notificationService.sendSuccess(`Successfully received AI-Bitcoin!`, { identifier: 'success-receive' });
       // pending has been processed, can be removed from the list
       // list also updated with reloadBalances but not if called too fast
       this.walletService.removePendingBlock(receivableBlock.hash);
     } else {
-      if (hasShownErrorNotification === false) {
-        if (!this.walletService.isLedgerWallet()) {
-          this.notificationService.sendError(`Error receiving transaction, please try again`, {length: 10000});
-        }
+      if (!this.walletService.isLedgerWallet()) {
+        this.notificationService.sendError(`There was a problem receiving the transaction, try manually!`, {length: 10000});
       }
     }
 

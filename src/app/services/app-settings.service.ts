@@ -9,7 +9,7 @@ export type LedgerConnectionType = 'usb'|'bluetooth';
 interface AppSettings {
   language: string;
   displayDenomination: string;
-  // displayPrefix: string | null;
+  displayPrefix: string | null;
   walletStore: string;
   displayCurrency: string;
   defaultRepresentative: string | null;
@@ -38,7 +38,7 @@ export class AppSettingsService {
   settings: AppSettings = {
     language: null,
     displayDenomination: 'mnano',
-    // displayPrefix: 'xrb',
+    displayPrefix: 'aibtc',
     walletStore: 'localStorage',
     displayCurrency: 'USD',
     defaultRepresentative: null,
@@ -46,11 +46,12 @@ export class AppSettingsService {
     lockInactivityMinutes: 30,
     ledgerReconnect: 'usb',
     powSource: 'best',
+    //powSource: 'clientCPU',
     multiplierSource: 1,
     customWorkServer: '',
     pendingOption: 'amount',
     decentralizedAliasesOption: 'disabled',
-    serverName: 'random',
+    serverName: 'aiforbitcoin',
     serverAPI: null,
     serverWS: null,
     serverAuth: null,
@@ -70,36 +71,12 @@ export class AppSettingsService {
       shouldRandom: false,
     },
     {
-      name: 'Rainstorm City',
-      value: 'rainstorm',
-      api: 'https://rainstorm.city/api',
-      ws: 'wss://rainstorm.city/websocket',
+      name: 'AI-Bitcoin',
+      value: 'aiforbitcoin',
+      api: 'https://api.aiforbitcoin.com/api',
+      ws: 'wss://ws.aiforbitcoin.com/ws',
       auth: null,
       shouldRandom: true,
-    },
-    {
-      name: 'NanOslo',
-      value: 'nanoslo',
-      api: 'https://nanoslo.0x.no/proxy',
-      ws: 'wss://nanoslo.0x.no/websocket',
-      auth: null,
-      shouldRandom: true,
-    },
-    {
-      name: 'SomeNano',
-      value: 'somenano',
-      api: 'https://node.somenano.com/proxy',
-      ws: 'wss://node.somenano.com/websocket',
-      auth: null,
-      shouldRandom: true,
-    },
-    {
-      name: 'SpyNano (New Node - Use with caution)',
-      value: 'spynano',
-      api: 'https://node.spynano.org/proxy',
-      ws: 'wss://node.spynano.org/websocket',
-      auth: null,
-      shouldRandom: false,
     },
     {
       name: 'Custom',
@@ -215,7 +192,7 @@ export class AppSettingsService {
     this.settings = {
       language: 'en',
       displayDenomination: 'mnano',
-      // displayPrefix: 'xrb',
+      displayPrefix: 'aibtc',
       walletStore: 'localStorage',
       displayCurrency: 'USD',
       defaultRepresentative: null,
@@ -227,7 +204,7 @@ export class AppSettingsService {
       customWorkServer: '',
       pendingOption: 'amount',
       decentralizedAliasesOption: 'disabled',
-      serverName: 'random',
+      serverName: 'aiforbitcoin',
       serverAPI: null,
       serverWS: null,
       serverAuth: null,

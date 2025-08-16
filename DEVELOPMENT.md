@@ -1,9 +1,9 @@
-# Nault Development
+# AI-Bitcoin Development
 
 ## Application Structure
 
-- [Nault](https://github.com/Nault/Nault) - The main wallet application (UI + Seed Generation/Block Signing/Etc).
-- Communication with the network is done via nano RPC and Websocket protocols, private or public on any nano network.
+- [AI-Bitcoin](https://github.com/aiforbitcoin/aibtc-wallet) - The main wallet application (UI + Seed Generation/Block Signing/Etc).
+- Communication with the network is done via AI-Bitcoin RPC and Websocket protocols, private or public on any AI-Bitcoin network.
 
 ## Development Prerequisites
 - [NodeJS](https://nodejs.org) v16.x + NPM v8.x
@@ -12,8 +12,8 @@
 ## Development Guide
 #### Clone repository and install dependencies
 ```bash
-git clone https://github.com/Nault/Nault
-cd Nault
+git clone https://github.com/aiforbitcoin/aibtc-wallet
+cd AI-Bitcoin-Wallet
 npm install
 ```
 
