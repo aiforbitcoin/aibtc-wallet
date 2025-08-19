@@ -6,7 +6,7 @@
 
 AI-Bitcoin-Wallet is a community driven fork of the popular nano wallet [Nault](https://github.com/Nault/Nault) 💙
 
-It's a fully client-side signing wallet for sending and receiving [AI-Bitcoin](https://github.com/aiforbitcoin/aibtc-node/) directly in your browser at [wallet.aiforbitcoin.com](https://wallet.aiforbitcoin.com).
+It's a fully client-side signing wallet for sending and receiving [AI-Bitcoin](https://github.com/aiforbitcoin/aibtc-node/) directly in your browser at..
 
 Seamless integration with any AI-Bitcoin compatible RPC backend/websocket and the aim to be more frequently maintained are some of the main features. Those together will greatly increase the stability, performance and uptime.
 
@@ -22,3 +22,4 @@ There is no native mobile app but the web wallet contains a Progressive Web App 
 
 * Android: Click on "Install AI-Bitcoin-Wallet for Android" in the menu
 * iOS (Safari only): 1 - Tap the share button. 2 - Select "+ Add to home screen". 3 - Open AI-Bitcoin-Wallet from the home screen
+
