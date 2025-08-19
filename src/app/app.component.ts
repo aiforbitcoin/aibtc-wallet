@@ -306,7 +306,7 @@ export class AppComponent implements OnInit {
     if (!searchData.length) return;
 
     const isValidNanoAccount = (
-        ( searchData.startsWith('aibtc_') /*|| searchData.startsWith('xrb_') || searchData.startsWith('nano_') */)
+        ( searchData.startsWith('aibtc_') || searchData.startsWith('xrb_') || searchData.startsWith('nano_') )
       && this.util.account.isValidAccount(searchData)
     );
 

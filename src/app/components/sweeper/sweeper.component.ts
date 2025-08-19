@@ -272,8 +272,8 @@ export class SweeperComponent implements OnInit {
           this.totalSwept = this.util.big.add(this.totalSwept, nanoAmountSent);
         }
         this.notificationService.sendInfo('Account ' + address + ' was swept and ' +
-        (nanoAmountSent ? ( 'AIBTC' + nanoAmountSent.toString(10) ) : '') + ' transferred to ' + this.destinationAccount, {length: 15000});
-        this.appendLog('Funds transferred ' + (nanoAmountSent ? ('(AIBTC' + nanoAmountSent.toString(10) + ')') : '') + ': ' + data.hash);
+        (nanoAmountSent ? ( 'FBTC' + nanoAmountSent.toString(10) ) : '') + ' transferred to ' + this.destinationAccount, {length: 15000});
+        this.appendLog('Funds transferred ' + (nanoAmountSent ? ('(FBTC' + nanoAmountSent.toString(10) + ')') : '') + ': ' + data.hash);
         console.log(this.adjustedBalance + ' raw transferred to ' + this.destinationAccount);
       } else {
         this.notificationService.sendWarning(`Failed processing block.`);
@@ -379,8 +379,8 @@ export class SweeperComponent implements OnInit {
         raw = this.util.big.add(raw, data.blocks[key].amount);
       }.bind(this));
       const nanoAmount = this.util.nano.rawToMnano(raw);
-      const pending = {count: Object.keys(data.blocks).length, raw: raw, AIBTC: nanoAmount, blocks: data.blocks};
-      const row = 'Found ' + pending.count + ' pending containing total ' + pending.AIBTC + ' AIBTC';
+      const pending = {count: Object.keys(data.blocks).length, raw: raw, FBTC: nanoAmount, blocks: data.blocks};
+      const row = 'Found ' + pending.count + ' pending containing total ' + pending.FBTC + ' FBTC';
       this.appendLog(row);
 
       // create receive blocks for all pending

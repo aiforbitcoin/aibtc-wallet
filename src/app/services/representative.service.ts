@@ -457,7 +457,7 @@ export class RepresentativeService {
   defaultRepresentatives = [
     {
       id: 'aibtc_16pahgxc7efumbnahotqzayki4s8qpczpnmnutptxu9wwscbe3uxucrsko1p',
-      name: 'AIBTC-Main-Rep',
+      name: 'FBTC-Main-Rep',
     },
 
   ];

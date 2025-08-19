@@ -47,7 +47,7 @@ export class ConfigureAppComponent implements OnInit {
   selectedLanguage = this.languages[0].id;
 
   denominations = [
-    { name: 'AIBTC', value: 'mnano' },
+    { name: 'FBTC', value: 'mnano' },
     { name: 'knano', value: 'knano' },
     { name: 'nano', value: 'nano' },
   ];
