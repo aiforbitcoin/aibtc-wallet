@@ -8,12 +8,12 @@ export class NoPaddingZerosPipe implements PipeTransform {
     const sig = input.split('.')[0];
     const frac = input.split('.')[1].replace(/0+$/g, '');
 
-    // 1.000000 FBTC >> 1 FBTC
+    // 1.000000 AIBTC >> 1 AIBTC
     if (!frac) {
       return sig;
     }
 
-    // 0.002200 >> 0.0022 FBTC
+    // 0.002200 >> 0.0022 AIBTC
     return `${sig}.${frac}`;
   }
 }
