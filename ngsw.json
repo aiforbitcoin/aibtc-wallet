@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1755635782997,
+  "timestamp": 1755635838602,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,13 +13,13 @@
       "urls": [
         "/cpupow.1b0c7179f5d0d4bc.worker.js",
         "/index.html",
-        "/main.fb969c7f30e6fee6.js",
+        "/main.3867c446c92f56ea.js",
         "/manifest.webmanifest",
         "/polyfills.6ff8b11604869675.js",
-        "/runtime.6b87f4426e244276.js",
+        "/runtime.81c79218024d8f29.js",
         "/styles.ce0318bb3240c637.css",
         "/translation0.560177baba07ff80.js",
-        "/translation1.5243c59ceee49258.js"
+        "/translation1.358228d29290496b.js"
       ],
       "patterns": []
     },
@@ -194,7 +194,7 @@
     "/assets/favicon/favicon.ico": "9432847abebbd7c70b06b78f013aedb945ab3410",
     "/assets/favicon/mstile-150x150.png": "fc4adaff0ab03426c4dd2ff7d8574d487a932544",
     "/assets/favicon/safari-pinned-tab.svg": "c0df528873ae6f60479f55f1919d62d99988afe7",
-    "/assets/favicon/site.webmanifest": "25b6ac37b27c8d819dae56ef0ccddab7784bea00",
+    "/assets/favicon/site.webmanifest": "734ee8bd78742fa483cc8c9b5d34b569bb741355",
     "/assets/fonts/montserrat-v15-latin-300.eot": "79ffc50c09de54d30478eb89c6984bbcb41ba5f9",
     "/assets/fonts/montserrat-v15-latin-300.svg": "3b19cf1b5993dc957823374160cf69755191d0a5",
     "/assets/fonts/montserrat-v15-latin-300.ttf": "fa13735b7d7ded9465b8767bb8db107c0a3251fe",
@@ -231,7 +231,7 @@
     "/assets/fonts/roboto-mono-v13-latin-regular.woff": "3f1bdd2cb69992c6cbf901c013c80302f4f6d54e",
     "/assets/fonts/roboto-mono-v13-latin-regular.woff2": "6bdf57408a458ab19e554ed1cec1f73107dae3ce",
     "/assets/i18n/de.json": "e062811976491138048e80485c723afa8f279f6d",
-    "/assets/i18n/en.json": "41e6efa9b018e69a1d849daf4666efdc3b925ee8",
+    "/assets/i18n/en.json": "13bc3257533689ff1e30080fd2118f823e307bae",
     "/assets/img/aibtc_logo.png": "e8283b65a9e3a57dd6a5f01a5f61cde9ab74d1b7",
     "/assets/img/aibtc_symbol.png": "1c3ed51e031734c6edca4cb113a83702e12cb384",
     "/assets/img/natricon-placeholder.svg": "6daf26f9a61a0d4d1818f003652588f7943804df",
@@ -253,7 +253,7 @@
     "/assets/lib/blake2b/blake2b.js": "edf7ed8da86dfee03d4b46452f01e850ea71ea87",
     "/assets/lib/cpupow.js": "b5f194cbe49bc0f26f8f9c4a8ecba2e20cd1f396",
     "/assets/lib/musig-nano/build-or-validate_musig_wasm.sh": "e02da5b3f9b1332d9f2e258a3bd2354155458861",
-    "/assets/lib/musig-nano/musig_nano.wasm.b64": "a977ec1ce77cd2ecbcfa5d58d4092c70eb7c28f0",
+    "/assets/lib/musig-nano/musig_nano.wasm.b64": "71f733bb7438e90a145dac60dfd30251719610d1",
     "/assets/lib/nanoidenticons.min.js": "987814b85bbe6ed5919d40507f98e9de1b77a356",
     "/assets/lib/pow/nano-webgl-pow.js": "8a035bb8de592b6e3300bf624772cc3fb5b3a025",
     "/assets/lib/pow/pow.js": "1b1692d8886bbe0745565e6e574f81387f17423f",
@@ -267,8 +267,8 @@
     "/assets/logo_source/nault-logo.eps": "a2147e36015ef5497c846a0b74dfb2a4828fd2cd",
     "/assets/logo_source/nault-logo.svg": "d9682092a80a1e825c646a1e7cebd8e4e9aead49",
     "/cpupow.1b0c7179f5d0d4bc.worker.js": "2d8ac5de31b8bbdad4a3118f49e1b4397a559f44",
-    "/index.html": "b53310bfa8a8d00e766e7a2b621855982238875d",
-    "/main.fb969c7f30e6fee6.js": "c14eb7e0148412e21fc89fa99e589ae78225f848",
+    "/index.html": "d43028141e3e4e3de22f271cb601620ecceca952",
+    "/main.3867c446c92f56ea.js": "ffeb5cf9775b1328baa49d5a524e404cb459c055",
     "/manifest.webmanifest": "fb9ce0116a92808e43c4203fa61fdcb255708437",
     "/montserrat-v15-latin-300.169464b41fd5a6ed.woff2": "cf6855b4b8fd9b7fc4d7adecd97080a70ad75c23",
     "/montserrat-v15-latin-300.1fb23400394501d6.eot": "79ffc50c09de54d30478eb89c6984bbcb41ba5f9",
@@ -307,10 +307,10 @@
     "/roboto-mono-v13-latin-regular.897854091e34f10a.eot": "b0b3dc4d2c0877eef3f9032a142c2bd57349a89a",
     "/roboto-mono-v13-latin-regular.898c8f1605bccd5e.ttf": "78b1b85542fec9c2239186aa495e2aa944456577",
     "/roboto-mono-v13-latin-regular.cecd954c0606bb3f.svg": "23049436a09c54fd366e30d8da2d14ecdc561afe",
-    "/runtime.6b87f4426e244276.js": "9d313f8397c52ca726f024c9b9510fc118af947d",
+    "/runtime.81c79218024d8f29.js": "2ef2acd8b4d992d8e3917d6e19536b0dcfa30f6c",
     "/styles.ce0318bb3240c637.css": "1d9fecab3f5a7c3787a1a7d1616a7c068dd0bfe5",
     "/translation0.560177baba07ff80.js": "4255f98b8300f023ff5026b3a4bcaeff2af8f810",
-    "/translation1.5243c59ceee49258.js": "ae1708a2767a00fe8f73dd0d170fd11e9591c0b3"
+    "/translation1.358228d29290496b.js": "b80ce9b46470d37c749b90c0a8af9558a4254c42"
   },
   "navigationUrls": [
     {
