@@ -10,10 +10,11 @@
 // @param progressCallback  Function Optional
 //   Receives single argument: n, number of frames so far
 //   Return true to abort
-// @param threshold         String   Optional difficulty threshold (default=0xFFFFFFF8 since v21)
+// @param threshold         String   Optional difficulty threshold
 
 (function(){
-const defaultThreshold = '0xFFFFFFF8'
+//const defaultThreshold = '0xFFFFFFF8'
+const defaultThreshold = '0x0000000000000001'
 
 function array_hex(arr, index, length) {
   let out='';
