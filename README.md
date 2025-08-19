@@ -22,9 +22,3 @@ There is no native mobile app but the web wallet contains a Progressive Web App 
 
 * Android: Click on "Install AI-Bitcoin-Wallet for Android" in the menu
 * iOS (Safari only): 1 - Tap the share button. 2 - Select "+ Add to home screen". 3 - Open AI-Bitcoin-Wallet from the home screen
-
-## How To Help
-
-Thanks for your interest in contributing! There are many ways to contribute to this project. [Get started here at CONTRIBUTING.md](CONTRIBUTING.md).
-
-If you want to know how to setup the development environment head over to [DEVELOPMENT.md](DEVELOPMENT.md).
